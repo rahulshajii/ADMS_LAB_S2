@@ -1,0 +1,24 @@
+--Write a pl/sql Function to get the sum of 2 numbers
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
+
+CREATE OR REPLACE FUNCTION add1(A IN NUMBER , B IN NUMBER) 
+RETURN NUMBER IS 
+S NUMBER;
+BEGIN
+S:=A+B;
+RETURN S;
+END;
+/
+
+DECLARE
+A NUMBER:=6;
+B NUMBER:=10;
+C NUMBER;
+BEGIN
+C:=add1(A, B);
+
+DBMS_OUTPUT.PUT_LINE(' SUM OF '|| A ||' AND '|| B ||' is : '|| C );
+
+END;
+/
